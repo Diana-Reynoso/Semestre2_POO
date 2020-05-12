@@ -12,7 +12,7 @@ import ico.fes.poo.gui.VentanaGridBagLayout;
 
 /**
  *
- * @author Dianis Silrey
+ * @author Diana Reynoso
  */
 public class IntroAWT {
 
