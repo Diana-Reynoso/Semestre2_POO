@@ -16,7 +16,7 @@ import java.awt.HeadlessException;
  *
  * @author Dianis Silrey
  */
-public class Ventana3 extends Frame {
+public class VentanaGridBagLayout extends Frame {
 
     private String titulo;
     private int alto;
@@ -27,10 +27,10 @@ public class Ventana3 extends Frame {
     private Button boton3 = new Button("Botón 3");
     private GridBagConstraints constraints = new GridBagConstraints();
 
-    public Ventana3() throws HeadlessException {
+    public VentanaGridBagLayout() throws HeadlessException {
     }
 
-    public Ventana3(String titulo, int alto, int ancho) throws HeadlessException {
+    public VentanaGridBagLayout(String titulo, int alto, int ancho) throws HeadlessException {
         super(titulo);
         this.titulo = titulo;
         this.alto = alto;

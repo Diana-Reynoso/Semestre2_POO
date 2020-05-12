@@ -6,38 +6,40 @@
 package ico.fes.poo.gui; //Graphic User Interface
 
 import ico.fes.poo.gui.eventos.EventosVentana;
+import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Frame;
-import java.awt.GridLayout;
 import java.awt.HeadlessException;
 
 /**
  *
- * @author Dianis Silrey
+ * @author Ricardo Tapia
  */
-public class Ventana2 extends Frame{
+public class VentanaBorderLayout extends Frame{
     private String titulo;
     private int alto;
     private int ancho;
-    private Button boton1 = new Button ("Botón 1");
-    private Button boton2 = new Button ("Botón 2");
-    private Button boton3 = new Button ("Botón 3");
-    private Button boton4 = new Button ("Botón 4");
-
-    public Ventana2() throws HeadlessException {
+    private Button boton1 = new Button ("Norte");
+    private Button boton2 = new Button ("Sur");
+    private Button boton3 = new Button ("Este");
+    private Button boton4 = new Button ("Oeste");
+    private Button boton5 = new Button ("Centro");
+    
+    public VentanaBorderLayout() throws HeadlessException {
     }
 
-    public Ventana2(String titulo, int alto, int ancho) throws HeadlessException {
+    public VentanaBorderLayout(String titulo, int alto, int ancho) throws HeadlessException {
         super(titulo);
         this.titulo = titulo;
         this.alto = alto;
         this.ancho = ancho;
         this.setSize(alto, ancho); 
-        this.setLayout(new GridLayout(2,4,6,8));
-        this.add(new Button("Botón 1"));
-        this.add(new Button("Botón 2"));
-        this.add(new Button("Botón 3"));
-        this.add(new Button("Botón 4"));
+        this.setLayout(new BorderLayout());
+        this.add(new Button("Norte"), BorderLayout.NORTH);
+        this.add(new Button("Sur"), BorderLayout.SOUTH);
+        this.add(new Button("Este"), BorderLayout.WEST);
+        this.add(new Button("Oeste"), BorderLayout.EAST);
+        this.add(new Button("Centro"), BorderLayout.CENTER);
         this.addWindowListener(new EventosVentana());
     }
 
@@ -68,4 +70,3 @@ public class Ventana2 extends Frame{
     
     
 }
-

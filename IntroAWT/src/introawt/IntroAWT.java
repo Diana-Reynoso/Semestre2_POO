@@ -6,9 +6,9 @@
 package introawt;
 
 import ico.fes.poo.gui.Ventana;
-import ico.fes.poo.gui.Ventana1;
-import ico.fes.poo.gui.Ventana2;
-import ico.fes.poo.gui.Ventana3;
+import ico.fes.poo.gui.VentanaBorderLayout;
+import ico.fes.poo.gui.VentanaGridLayout;
+import ico.fes.poo.gui.VentanaGridBagLayout;
 
 /**
  *
@@ -23,13 +23,13 @@ public class IntroAWT {
         Ventana ven = new Ventana("Hola mundo GUI Java 1", 600, 400);
         ven.setVisible(true);
         
-        Ventana1 ven1 = new Ventana1("Hola mundo GUI Java 2", 600, 400);
+        VentanaBorderLayout ven1 = new VentanaBorderLayout("Hola mundo GUI Java 2", 600, 400);
         ven1.setVisible(true);
         
-        Ventana2 ven2 = new Ventana2("Hola mundo GUI Java 3", 600, 400);
+        VentanaGridLayout ven2 = new VentanaGridLayout("Hola mundo GUI Java 3", 600, 400);
         ven2.setVisible(true);
         
-        Ventana3 ven3 = new Ventana3("Hola mundo GUI Java 4", 600, 400);
+        VentanaGridBagLayout ven3 = new VentanaGridBagLayout("Hola mundo GUI Java 4", 600, 400);
         ven3.setVisible(true);
         
         
