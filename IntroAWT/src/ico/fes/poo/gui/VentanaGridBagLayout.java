@@ -14,7 +14,7 @@ import java.awt.HeadlessException;
 
 /**
  *
- * @author Dianis Silrey
+ * @author Diana Reynoso
  */
 public class VentanaGridBagLayout extends Frame {
 
