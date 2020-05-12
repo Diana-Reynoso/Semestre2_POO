@@ -10,7 +10,7 @@ import java.awt.event.WindowListener;
 
 /**
  *
- * @author Dianis Silrey
+ * @author Diana Reynoso
  */
 public class EventosVentana implements WindowListener{
 
