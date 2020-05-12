@@ -13,7 +13,7 @@ import java.awt.HeadlessException;
 
 /**
  *
- * @author Ricardo Tapia
+ * @author Diana Reynoso
  */
 public class VentanaBorderLayout extends Frame{
     private String titulo;
