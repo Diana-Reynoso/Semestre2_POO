@@ -7,8 +7,8 @@ package ico.fes.poo.gui; //Graphic User Interface
 
 import ico.fes.poo.gui.eventos.EventosVentana;
 import java.awt.Button;
-import java.awt.FlowLayout;
 import java.awt.Frame;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.HeadlessException;
 
@@ -16,14 +16,16 @@ import java.awt.HeadlessException;
  *
  * @author Dianis Silrey
  */
-public class Ventana3 extends Frame{
+public class Ventana3 extends Frame {
+
     private String titulo;
     private int alto;
     private int ancho;
-    private Button boton1 = new Button ("Botón 1");
-    private Button boton2 = new Button ("Botón 2");
-    private Button boton3 = new Button ("Botón 3");
-    private Button boton4 = new Button ("Botón 4");
+    private Button boton0 = new Button("Botón 0");
+    private Button boton1 = new Button("Botón 1");
+    private Button boton2 = new Button("Botón 2");
+    private Button boton3 = new Button("Botón 3");
+    private GridBagConstraints constraints = new GridBagConstraints();
 
     public Ventana3() throws HeadlessException {
     }
@@ -33,12 +35,28 @@ public class Ventana3 extends Frame{
         this.titulo = titulo;
         this.alto = alto;
         this.ancho = ancho;
-        this.setSize(alto, ancho); 
+        this.setSize(alto, ancho);
         this.setLayout(new GridBagLayout());
-        this.add(new Button("Botón 1"));
-        this.add(new Button("Botón 2"));
-        this.add(new Button("Botón 3"));
-        this.add(new Button("Botón 4"));
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.gridwidth = 2;
+        constraints.gridheight = 2;
+        this.add(boton0, constraints);
+        constraints.gridx = 2;
+        constraints.gridy = 1;
+        constraints.gridwidth = 1;
+        constraints.gridheight = 1;
+        this.add(boton1, constraints);
+        constraints.gridx = 2;
+        constraints.gridy = 2;
+        constraints.gridwidth = 1;
+        constraints.gridheight = 1;
+        this.add(boton2, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        constraints.gridwidth = 1;
+        constraints.gridheight = 1;
+        this.add(boton3, constraints);
         this.addWindowListener(new EventosVentana());
     }
 
@@ -65,6 +83,5 @@ public class Ventana3 extends Frame{
     public void setAlto(int alto) {
         this.alto = alto;
     }
-    
-    
+
 }
