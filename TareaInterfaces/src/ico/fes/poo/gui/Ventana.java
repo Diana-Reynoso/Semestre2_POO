@@ -5,6 +5,8 @@
  */
 package ico.fes.poo.gui;
 
+import ico.fes.poo.gui.eventos.EventosVentana;
+import java.awt.FlowLayout;
 import java.awt.HeadlessException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -27,13 +29,17 @@ public class Ventana extends JFrame{
     public Ventana() throws HeadlessException {
     }
 
-    public Ventana(String titulo, int alto, int ancho, JTextField nombre, JButton boton, JOptionPane bienvenida) throws HeadlessException {
+   public Ventana(String titulo, int alto, int ancho) throws HeadlessException {
+        super(titulo);
         this.titulo = titulo;
         this.alto = alto;
         this.ancho = ancho;
-        this.nombre = nombre;
-        this.boton = boton;
-        this.bienvenida = bienvenida;
+        this.setSize(alto, ancho); 
+        boton = new JButton ("Saludar");
+        this.setLayout(new FlowLayout());
+        this.add(boton);
+        nombre = new JTextField ("Nombre: ");
+        this.addWindowListener(new EventosVentana());
     }
 
     public String getTitulo() {
