@@ -5,11 +5,15 @@
  */
 package ico.fes.poo.gui;
 
-import ico.fes.poo.gui.eventos.EventosVentana;
 import java.awt.FlowLayout;
 import java.awt.HeadlessException;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -17,29 +21,48 @@ import javax.swing.JTextField;
  *
  * @author Diana Reynoso
  */
-public class Ventana extends JFrame{
-    
+public class Ventana extends JFrame {
+
     private String titulo;
     private int alto;
     private int ancho;
     private JTextField nombre;
     private JButton boton;
     private JOptionPane bienvenida;
+    private JLabel mensaje;
 
     public Ventana() throws HeadlessException {
     }
 
-   public Ventana(String titulo, int alto, int ancho) throws HeadlessException {
+    public Ventana(String titulo, int alto, int ancho) throws HeadlessException {
         super(titulo);
         this.titulo = titulo;
         this.alto = alto;
         this.ancho = ancho;
-        this.setSize(alto, ancho); 
-        boton = new JButton ("Saludar");
+        this.setSize(alto, ancho);
+        nombre = new JTextField("Escribe tu nombre", 18);
+        boton = new JButton("Saludar");
+        bienvenida = new JOptionPane(mensaje);
+        mensaje = new JLabel("Bienvenido");
         this.setLayout(new FlowLayout());
         this.add(boton);
-        nombre = new JTextField ("Nombre: ");
-        this.addWindowListener(new EventosVentana());
+        super.add(nombre);
+        this.add(bienvenida);
+        boton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                mensaje.setText("Bienvenido/a " + nombre.getText() );
+                JOptionPane.showMessageDialog(null, "Bienvenido/a " + nombre.getText());
+            }
+
+        });
+        super.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+            }
+
+        });
     }
 
     public String getTitulo() {
@@ -89,5 +112,5 @@ public class Ventana extends JFrame{
     public void setBienvenida(JOptionPane bienvenida) {
         this.bienvenida = bienvenida;
     }
-    
+
 }

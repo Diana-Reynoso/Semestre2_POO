@@ -15,8 +15,9 @@ public class TareaInterfaces {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Ventana ven = new Ventana("Bienvenida", 600, 400);
+        Ventana ven = new Ventana("Bienvenida", 250, 150);
         ven.setVisible(true);
+
     }
-    
+
 }
