@@ -5,6 +5,7 @@
  */
 package ico.fes.poo.gui;
 
+import ico.fes.poo.modelo.AbstractModeloTablaComic;
 import ico.fes.poo.modelo.Comic;
 import ico.fes.poo.modelo.ModeloTablaComic;
 import java.util.ArrayList;
@@ -154,7 +155,7 @@ public class VentanaTabla extends javax.swing.JFrame {
             }
         });
     }
-
+    private AbstractModeloTablaComic modelo;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
