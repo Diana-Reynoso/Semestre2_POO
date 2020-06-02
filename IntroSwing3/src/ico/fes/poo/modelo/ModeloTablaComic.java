@@ -23,6 +23,8 @@ public class ModeloTablaComic implements TableModel{
         this.data = data;
     }
     
+    
+    
     @Override
     public int getRowCount() {
         return data.size();
@@ -34,40 +36,40 @@ public class ModeloTablaComic implements TableModel{
     }
 
     @Override
-    public String getColumnName(int i) {
-        String columnName = "";
-        switch (i) {
+    public String getColumnName(int columnIndex) {
+        String columnName="";
+        switch (columnIndex) {
             case 0:
-                columnName = "# de comic";
+                    columnName = "No. de cómic";
                 break;
             case 1:
-                columnName = "Edición";
+                    columnName = "Edición";
                 break;
             case 2:
-                columnName = "Universo";
+                    columnName = "Universo";
                 break;
             case 3:
-                columnName = "Editorial";
+                    columnName = "Editorial";
                 break;
             case 4:
-                columnName = "Personaje";
+                    columnName = "Personaje";
                 break;
             case 5:
-                columnName = "Título";
+                    columnName = "Título";
                 break;
             case 6:
-                columnName = "Precio $";
+                    columnName = "Precio $";
                 break;
-                
+
             default:
-                columnName = "No disponible";
+                columnName="No disponible";
         }
         return columnName;
     }
 
     @Override
-    public Class<?> getColumnClass(int i) {
-        switch (i) {
+    public Class<?> getColumnClass(int columnIndex) {
+        switch (columnIndex) {
             case 0:
                 return Integer.class;
             case 1:
@@ -88,18 +90,18 @@ public class ModeloTablaComic implements TableModel{
     }
 
     @Override
-    public boolean isCellEditable(int i, int i1) {
-        return false;
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return true ;
     }
 
     @Override
-    public Object getValueAt(int i, int i1) {
-        Comic tmp = data.get(i);
-        switch (i1) {
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        Comic tmp = data.get(rowIndex);
+        switch (columnIndex) {
             case 0:
                 return tmp.getNumeroComic();
             case 1:
-                return tmp.getEdicion();  
+                return tmp.getEdicion();
             case 2:
                 return tmp.getUniverso();
             case 3:
@@ -109,25 +111,25 @@ public class ModeloTablaComic implements TableModel{
             case 5:
                 return tmp.getTitulo();
             case 6:
-                return tmp.getPrecio();
+                return tmp.getPrecio();        
             default:
                 return null;
         }
     }
 
     @Override
-    public void setValueAt(Object o, int i, int i1) {
-        
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+   
     }
 
     @Override
-    public void addTableModelListener(TableModelListener tl) {
-        
+    public void addTableModelListener(TableModelListener l) {
+   
     }
 
     @Override
-    public void removeTableModelListener(TableModelListener tl) {
-        
+    public void removeTableModelListener(TableModelListener l) {
+   
     }
     
     

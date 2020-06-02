@@ -91,7 +91,7 @@ public class VentanaTabla extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -101,23 +101,23 @@ public class VentanaTabla extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
+                .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        ArrayList<Comic> lista = new ArrayList();
+        ArrayList<Comic> lista=new ArrayList();
         lista.add(new Comic(2, 1, "Marvel", "Planeta", "Spider-Man", "The Amazing Spider-Man", 200.0f));
-        lista.add(new Comic(13, 7, "DC Comics", "Planeta", "SuperMan", "SuperMan 2", 240.5f));
-        lista.add(new Comic(28, 6, "Marvel", "Planeta", "Wolverine", "Old Man Logan", 310.7f));
-        ModeloTablaComic modelo = new ModeloTablaComic();
+        lista.add(new Comic(22, 2, "DC Comics", "Vid", "SuperMan", "Orígenes", 250.0f));
+        lista.add(new Comic(42, 1, "Marvel", "Planeta", "Wolverine", "Old Man Logan", 300.0f));
+        ModeloTablaComic modelo= new ModeloTablaComic(lista);
         jTable1.setModel(modelo);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        JOptionPane.showMessageDialog(this, "Renglón: " + jTable1.getSelectedRow() + "\nColumna: " + jTable1.getSelectedColumn());
+         JOptionPane.showMessageDialog(this, "Renglon: " + jTable1.getSelectedRow() + "\nColumna: " + jTable1.getSelectedColumn());
     }//GEN-LAST:event_jTable1MouseClicked
 
     /**
