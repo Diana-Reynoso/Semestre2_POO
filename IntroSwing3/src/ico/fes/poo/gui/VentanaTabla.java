@@ -7,7 +7,7 @@ package ico.fes.poo.gui;
 
 /**
  *
- * @author Dianis Silrey
+ * @author Diana Reynoso
  */
 public class VentanaTabla extends javax.swing.JFrame {
 

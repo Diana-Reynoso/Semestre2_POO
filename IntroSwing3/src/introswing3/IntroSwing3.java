@@ -7,7 +7,7 @@ package introswing3;
 
 /**
  *
- * @author Dianis Silrey
+ * @author Diana Reynoso
  */
 public class IntroSwing3 {
 
