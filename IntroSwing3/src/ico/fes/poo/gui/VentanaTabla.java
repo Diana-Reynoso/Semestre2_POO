@@ -5,6 +5,11 @@
  */
 package ico.fes.poo.gui;
 
+import ico.fes.poo.modelo.Comic;
+import ico.fes.poo.modelo.ModeloTablaComic;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Diana Reynoso
@@ -37,6 +42,11 @@ public class VentanaTabla extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 0, 0));
 
         jButton1.setText("Cargar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -57,15 +67,20 @@ public class VentanaTabla extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,6 +106,19 @@ public class VentanaTabla extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        ArrayList<Comic> lista = new ArrayList();
+        lista.add(new Comic(2, 1, "Marvel", "Planeta", "Spider-Man", "The Amazing Spider-Man", 200.0f));
+        lista.add(new Comic(13, 7, "DC Comics", "Planeta", "SuperMan", "SuperMan 2", 240.5f));
+        lista.add(new Comic(28, 6, "Marvel", "Planeta", "Wolverine", "Old Man Logan", 310.7f));
+        ModeloTablaComic modelo = new ModeloTablaComic();
+        jTable1.setModel(modelo);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        JOptionPane.showMessageDialog(this, "Renglón: " + jTable1.getSelectedRow() + "\nColumna: " + jTable1.getSelectedColumn());
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments

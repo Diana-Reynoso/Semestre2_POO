@@ -9,7 +9,7 @@ package ico.fes.poo.modelo;
  *
  * @author Diana Reynoso
  */
-public class Comics {
+public class Comic {
     private int numeroComic;
     private int edicion;
     private String universo;
@@ -18,10 +18,10 @@ public class Comics {
     private String titulo;
     private float precio;
 
-    public Comics() {
+    public Comic() {
     }
 
-    public Comics(int numeroComic, int edicion, String universo, String editorial, String personaje, String titulo, float precio) {
+    public Comic(int numeroComic, int edicion, String universo, String editorial, String personaje, String titulo, float precio) {
         this.numeroComic = numeroComic;
         this.edicion = edicion;
         this.universo = universo;
@@ -86,6 +86,11 @@ public class Comics {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
+    @Override
+    public String toString() {
+        return "Comics (" + "Número Cómic: " + numeroComic + ", edición: " + edicion + ", universo: " + universo + ", editorial: " + editorial + ", personaje: " + personaje + ", título: " + titulo + ", precio: " + precio + ')';
+    }
     
-    
+   
 }
