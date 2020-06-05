@@ -13,18 +13,18 @@ public class Reloj {
     private String marca;
     private String color;
     private String material;
-    private String extensibles;
+    private String extensible;
     private String tipo;
     private String anaDig;
 
     public Reloj() {
     }
 
-    public Reloj(String marca, String color, String material, String extensibles, String tipo, String anaDig) {
+    public Reloj(String marca, String color, String material, String extensible, String tipo, String anaDig) {
         this.marca = marca;
         this.color = color;
         this.material = material;
-        this.extensibles = extensibles;
+        this.extensible = extensible;
         this.tipo = tipo;
         this.anaDig = anaDig;
     }
@@ -61,12 +61,12 @@ public class Reloj {
         this.material = material;
     }
 
-    public String getExtensibles() {
-        return extensibles;
+    public String getExtensible() {
+        return extensible;
     }
 
-    public void setExtensibles(String extensibles) {
-        this.extensibles = extensibles;
+    public void setExtensible(String extensible) {
+        this.extensible = extensible;
     }
 
     public String getTipo() {
@@ -79,7 +79,7 @@ public class Reloj {
 
     @Override
     public String toString() {
-        return "Reloj(" + "Marca: " + marca + ", Color: " + color + ", Material: " + material + ", Extensibles: " + extensibles + ", Tipo: " + tipo + ", Analógico o Digital: " + anaDig + ')';
+        return "Reloj(" + "Marca: " + marca + ", Color: " + color + ", Material: " + material + ", Extensible: " + extensible + ", Tipo: " + tipo + ", Analógico o Digital: " + anaDig + ')';
     }
     
     

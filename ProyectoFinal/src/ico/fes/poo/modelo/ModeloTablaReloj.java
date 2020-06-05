@@ -46,7 +46,7 @@ public class ModeloTablaReloj extends AbstractTableModel{
                     columnName = "Material";
                 break;
             case 3:
-                    columnName = "Extensibles";
+                    columnName = "Extensible";
                 break;
             case 4:
                     columnName = "Tipo";
@@ -96,7 +96,7 @@ public class ModeloTablaReloj extends AbstractTableModel{
             case 2:
                 return tmp.getMaterial();
             case 3:
-                return tmp.getExtensibles();
+                return tmp.getExtensible();
             case 4:
                 return tmp.getTipo();
             case 5:
@@ -121,7 +121,7 @@ public class ModeloTablaReloj extends AbstractTableModel{
                 tmp.setMaterial((String)aValue );
                 break;
             case 3:
-                tmp.setExtensibles((String)aValue );
+                tmp.setExtensible((String)aValue );
                 break;
             case 4:
                 tmp.setTipo((String)aValue );
@@ -136,7 +136,7 @@ public class ModeloTablaReloj extends AbstractTableModel{
          this.fireTableCellUpdated(rowIndex, columnIndex);
     }    
     
-    public void agregarComic(Reloj r){
+    public void agregarReloj(Reloj r){
         data.add(r);
         this.fireTableDataChanged();
     }

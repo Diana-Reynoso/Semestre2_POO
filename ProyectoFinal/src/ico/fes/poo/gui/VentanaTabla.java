@@ -5,6 +5,10 @@
  */
 package ico.fes.poo.gui;
 
+import ico.fes.poo.modelo.ModeloTablaReloj;
+import ico.fes.poo.modelo.Reloj;
+import java.util.ArrayList;
+
 /**
  *
  * @author Diana Reynoso
@@ -58,6 +62,11 @@ public class VentanaTabla extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Cargar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,7 +100,11 @@ public class VentanaTabla extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Guardar");
-        jButton2.setActionCommand("Guardar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -232,9 +245,9 @@ public class VentanaTabla extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -248,6 +261,27 @@ public class VentanaTabla extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        ArrayList<Reloj> lista=new ArrayList();
+        lista.add(new Reloj("City Zen", "Negro", "Plástico", "Plástico", "Hombre", "Digital"));
+        lista.add(new Reloj("Tissot", "Plata", "Metal", "Metal", "Hombre", "Analógico"));
+        lista.add(new Reloj("Casio", "Café", "Metal", "Piel", "Mujer", "Analógico"));
+        modelo= new ModeloTablaReloj(lista);
+        jTable1.setModel(modelo);
+        jTable2.setModel(modelo);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        Reloj nuevo = new Reloj();
+        nuevo.setMarca(jTextField1.getText());
+        nuevo.setColor(jTextField2.getText());
+        nuevo.setMaterial(jTextField3.getText());
+        nuevo.setExtensible(jTextField4.getText());
+        nuevo.setTipo(jTextField5.getText());
+        nuevo.setAnaDig(jTextField6.getText());
+        modelo.agregarReloj(nuevo);
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -284,6 +318,7 @@ public class VentanaTabla extends javax.swing.JFrame {
         });
     }
 
+    private ModeloTablaReloj modelo;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
