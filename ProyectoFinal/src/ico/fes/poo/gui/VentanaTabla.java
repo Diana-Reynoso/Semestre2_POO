@@ -204,7 +204,7 @@ public class VentanaTabla extends javax.swing.JFrame {
         );
 
         jTable1.setBackground(new java.awt.Color(153, 0, 153));
-        jTable1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -219,7 +219,7 @@ public class VentanaTabla extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jTable2.setBackground(new java.awt.Color(0, 153, 153));
-        jTable2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jTable2.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
