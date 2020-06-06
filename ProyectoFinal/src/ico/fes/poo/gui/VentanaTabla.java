@@ -75,27 +75,27 @@ public class VentanaTabla extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Light", 3, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Marca: ");
+        jLabel2.setText("Marca*: ");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Light", 3, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Color:");
+        jLabel3.setText("Color*:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Light", 3, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Material: ");
+        jLabel4.setText("Material*: ");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Light", 3, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Extensibles:");
+        jLabel5.setText("Extensible*:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Light", 3, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Tipo:");
+        jLabel6.setText("Tipo(Dama/Caballero)*:");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Light", 3, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Analógico/digital: ");
+        jLabel7.setText("Analógico/digital*: ");
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -163,7 +163,7 @@ public class VentanaTabla extends javax.swing.JFrame {
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 30, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -242,7 +242,7 @@ public class VentanaTabla extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -281,7 +281,7 @@ public class VentanaTabla extends javax.swing.JFrame {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         Reloj nuevo = new Reloj();
         if (jTextField1.getText().equals("") || jTextField2.getText().equals("") || jTextField3.getText().equals("") || jTextField4.getText().equals("") || jTextField5.getText().equals("") ||  jTextField6.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Campo obligatorio");
+            JOptionPane.showMessageDialog(this, "*Campo obligatorio");
         } else {
         nuevo.setMarca(jTextField1.getText());
         nuevo.setColor(jTextField2.getText());
