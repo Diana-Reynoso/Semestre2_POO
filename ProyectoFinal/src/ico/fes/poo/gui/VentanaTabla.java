@@ -8,6 +8,7 @@ package ico.fes.poo.gui;
 import ico.fes.poo.modelo.ModeloTablaReloj;
 import ico.fes.poo.modelo.Reloj;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -116,6 +117,11 @@ public class VentanaTabla extends javax.swing.JFrame {
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Limpiar");
         jButton3.setActionCommand("Guardar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -274,6 +280,9 @@ public class VentanaTabla extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         Reloj nuevo = new Reloj();
+        if (jTextField1.getText().equals("") || jTextField2.getText().equals("") || jTextField3.getText().equals("") || jTextField4.getText().equals("") || jTextField5.getText().equals("") ||  jTextField6.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Campo obligatorio");
+        } else {
         nuevo.setMarca(jTextField1.getText());
         nuevo.setColor(jTextField2.getText());
         nuevo.setMaterial(jTextField3.getText());
@@ -281,7 +290,17 @@ public class VentanaTabla extends javax.swing.JFrame {
         nuevo.setTipo(jTextField5.getText());
         nuevo.setAnaDig(jTextField6.getText());
         modelo.agregarReloj(nuevo);
+        }
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
